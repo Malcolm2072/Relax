@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static  %}
+    <link rel="stylesheet" href="{% static 'css\resistyle.css'%}">
+    <title>Relax</title>
+</head>
+<body>
+    <div class="box">
+        <h1>Register</h1>
+        <form method="POST" action="">
+            {% csrf_token %}
+            
+            <div class="form-group">
+                <label for="id_username">{{ form.username.label }}</label>
+                {{ form.username }}
+            </div>
+
+            <div class="form-group">
+                <label for="id_email">{{ form.email.label }}</label>
+                {{ form.email }}
+            </div>
+
+            <div class="form-group">
+                <label for="id_password1">{{ form.password1.label }}</label>
+                {{ form.password1 }}
+            </div>
+
+            <div class="form-group">
+                <label for="id_password2">{{ form.password2.label }}</label>
+                {{ form.password2 }}
+            </div>
+
+            <div class="form-group">
+                <input type="submit" name="Create User">
+            </div>
+        </form>
+        
+        {{ form.errors }}
+
+        <div class="link">
+            <a href="{% url 'Login' %}">Already have an account? Click here</a>
+        </div>
+    </div>
+</body>
+</html>

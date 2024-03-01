@@ -27,27 +27,31 @@
                 <a href="#">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
                     <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
-                    </svg></a>
+                    </svg>
+                </a>
             </div>
         </div> 
     </div>     
-    <div class="banner">
-        <h1>Breathing Exercise Game</h1>
-    <button id="startButton">Start</button>
-    <div id="breathingInstructions" style="display: none;">
-        <p>Follow the instructions: Inhale... Exhale...</p>
-    </div>
+    <h1> Calmer </h1>
+    <div class="container" id="container">
+        <div class="circle"></div>
+        <p id="text"></p>
 
-    <script>
-        document.getElementById("startButton").addEventListener("click", function() {
-            document.getElementById("startButton").style.display = "none";
-            document.getElementById("breathingInstructions").style.display = "block";
-            setTimeout(function() {
-                alert("Time's up! You've completed 1 minute of breathing exercise.");
-                // You can redirect to another page or perform any other action here
-            }, 60000); // 1 minute = 60,000 milliseconds
-        });
-    </script>
-    </div>  
+        <div class="pointer-container">
+            <span class="pointer"></span>
+        </div>
+
+        <div class="gradient-circle"></div>
+        <div class="gradient-circle-blur"></div>
+    </div>
+    
+    <audio src="{% static 'audio\breathin.mp3' %}" id="breathein"></audio>
+    <audio src="{% static 'audio\hold.mp3' %}" id="hold"></audio>
+    <audio src="{% static 'audio\breatheout.mp3' %}" id="breatheout"></audio>
+
+    <script src="{% static 'script\REL_script.js' %}"></script>
+    
+    
+   
 </body>
 </html>
