@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UnWind</title>
+    {% load static %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600&family=Great+Vibes&family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/UW.css' %}">
+    <style>
+        .playlist h4 a {
+            text-decoration: none;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .main {
+            flex: 1;
+        }
+        .footer {
+            background-color: white;
+            text-align: center;
+            padding: 10px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="navbar">
+            <a href="/" class="logo">Relax</a>
+            <ul>
+                <li><a href="#">UnWind</a></li>
+                <li><a href="#">SmRelax</a></li>
+                <li><a href="#">Relive</a></li>
+                <li><a href="/inspire">Inspire</a></li>
+            </ul>
+            <div class="navbar-icon">
+                <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                    <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+                    </svg></a>
+            </div>
+        </div> 
+    </div>     
+    <div class="banner">
+        <div class="left">
+            <h1>Playlist</h1>
+            <div class="playlist">
+                {% for mood_category in mood %}
+                <h4><span></span><a href="?mood_id={{ mood_category.m_id }}"><h4>{{ mood_category.m_name }}</h4></a></h4>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="mid">
+            <h1>Test</h1>
+        </div>
+        <div class="right">
+            <h1>Songs</h1>
+            <div class="list">
+                {% for song in songs %}
+                <li class="items">
+                    <span>--></span>
+                    <img src="{{ song.cover.url }}" alt="Cover">
+                    <h5>
+                        {{ song.s_name }}
+                        <div class="artist">
+                        {{ song.artist }}
+                        </div>
+                    </h5>
+                </li>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="wave">
+            <div class="wave1"></div>
+            <div class="wave1"></div>
+            <div class="wave1"></div>
+        </div>
+        <img src="happy/cover/Shootout.jfif" alt="cover">
+        <h5>Shootout<br>
+            <div class="artist">
+                Izzamuzzic
+            </div>
+        </h5>
+        <div class="icon"> 
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-skip-start-fill" viewBox="0 0 16 16">
+                <path d="M4 4a.5.5 0 0 1 1 0v3.248l6.267-3.636c.54-.313 1.232.066 1.232.696v7.384c0 .63-.692 1.01-1.232.697L5 8.753V12a.5.5 0 0 1-1 0z"/>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
+                <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-skip-end-fill" viewBox="0 0 16 16">
+                <path d="M12.5 4a.5.5 0 0 0-1 0v3.248L5.233 3.612C4.693 3.3 4 3.678 4 4.308v7.384c0 .63.692 1.01 1.233.697L11.5 8.753V12a.5.5 0 0 0 1 0z"/>
+            </svg>
+        </div>
+        <span id="currentStart">0:00</span>
+        <div class="bar">
+            <input type="range" id="seek" min="0" value="0" max="100">
+            <div class="bar2" id="bar2"></div>
+            <div class="dot"></div>
+        </div>
+        <span id="currentEnd">0:00</span>
+    </div>  
+</body>
+</html>

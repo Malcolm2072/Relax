@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inspire</title>
+    {% load static %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600&family=Great+Vibes&family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/IN.css' %}">
+    <style>
+        .banner .left h1{
+            font-size: 30px;
+            margin: 0px 0px 0px 80px;
+        }
+        .list{
+            margin: 30px 0px 0px 80px;
+        }
+        .list h4 a{
+            text-decoration: none;
+        }
+        .list h4 a h4{
+            font-size: 20px;
+            padding-bottom: 10px;
+            color: #c9b5cf;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            transition: .3s linear;
+        } 
+        .list h4 a h4:hover{
+            color: #9055A2;
+        }
+        .info{
+            margin: auto;
+            width: 750px;
+            padding: 0px;
+        }
+        .info img{
+            height: 180px;
+        }
+        .info h2{
+            color: #9055A2;
+            font-size: 32px;
+        }
+        .info h4{
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="navbar">
+            <a href="/" class="logo">Relax</a>
+            <ul>
+                <li><a href="/unwind">UnWind</a></li>
+                <li><a href="#">SmRelax</a></li>
+                <li><a href="#">Relive</a></li>
+                <li><a href="#">Inspire</a></li>
+            </ul>
+            <div class="navbar-icon">
+                <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                    <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+                    </svg></a>
+            </div>
+        </div> 
+    </div>     
+    <div class="banner">
+        <div class="left">
+            <h1 class=>Stories</h1>
+            <div class="list">
+            {% for i in story %}
+            <h4><span></span><a href="?story_id={{ i.p_id }}"><h4>{{ i.p_name }}</h4></a></h4>
+            {% endfor %}
+            </div>
+        </div>
+        <div class="right">
+            <div class="info">
+                {% for j in info %}
+                <img src="{{ j.pic.url }}" alt="Pic">
+                <h2>{{ j.p_name }}</h2>
+                <h4>{{ j.stories }}</h4>                
+                {% endfor %} 
+            </div>
+        </div>
+    </div>  
+</body>
+</html>

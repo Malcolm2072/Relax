@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relax</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600&family=Great+Vibes&family=Open+Sans&display=swap" rel="stylesheet">
+    {% load static  %}
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+</head>
+<body>
+    <div class="main">
+        <div class="navbar">
+            <a href="#" class="logo">Relax</a>
+            <ul>
+                <li><a href="home">Home</a></li>
+                <li><a href="features">Features</a></li>
+                <li><a href="aboutus">About</a></li>
+            </ul>
+            <div class="navbar-icon">
+                <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                    <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <div class="banner">
+            <div class="left">
+                <h1>Welcome to <span>Relax</span></h1>
+                <p>
+                    At Relax, we believe in the transformative power of music to elevate your mood and brighten your day. Our innovative platform combines mood detection technology with a library of songs and engaging activities, creating a unique and personalized experience tailored just for you.
+                </p>
+                <div class="btn">
+                    <button type="button" class="up">Sign Up</button>
+                    <button type="button">Sign In</button>
+                </div>
+            </div>
+            <div class="right">
+                <img src="{% static 'img/headphone.png'%}" alt="Headphone">
+            </div>
+        </div>
+        <div class="banner">
+            <div class="left">
+                <img src="img/smiling woman.png" alt="">
+            </div>
+            <div class="right">
+                <h1>Features</h1>
+                <p>
+                    Experience the magic of our face detection feature, which reads your mood in real-time. Enjoy personalized music that suits your emotions and discover activities like breathing exercises and bubble popping for a tailored, therapeutic experience. Let technology enhance your mental wellness journey with us.
+                </p>
+                <div class="btn">
+                    <button type="button" class="up">Sign Up</button>
+                    <button type="button">Sign In</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

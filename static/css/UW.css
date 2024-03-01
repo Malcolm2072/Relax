@@ -1,0 +1,291 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Dosis', sans-serif;
+    color: #2E294E;
+
+}
+
+.logo{
+    text-decoration: none;
+    color: #9055A2;
+    font-family: Great Vibes;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.main{
+    width: 80%;
+    margin: auto;
+}
+.navbar{
+    margin: 30px auto;
+    display: flex;
+    align-items: center;
+}
+ul{
+    flex: 1;
+    text-align: right;
+}
+ul li{
+    display: inline-block;
+    list-style: none; 
+    margin: 0 25px;
+}
+ul li a{
+    text-decoration: none;
+    color: black;
+    padding: 0 10px;
+    position: relative;
+}
+ul li a::after{
+    content: '';
+    width: 0%;
+    height: 10px;
+    background: #9055A2;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top:-55px; 
+    transition: 0.3s;
+}
+ul li a:hover::after{
+    width: 100%;
+}
+.navbar-icon{
+    margin-left: 50px;
+}
+.navbar-icon img{
+    height: 30px;
+}
+.banner{
+    margin-top: 50px;
+    display: flex;
+}
+.left{
+    width: 25%;
+    height: 320px;
+    text-decoration: none;
+}
+.mid{
+    width: 45%;
+    height: 320px;
+}
+.right{
+    width: 30%;
+    height: 320px;
+}
+.footer{
+    display: flex;
+    height: 80px;
+}
+.left h1{
+    font-size: 30px;
+    margin: 0px 0px 0px 80px;
+}
+.left .playlist{
+    margin: 30px 0px 0px 80px;
+}
+
+.left .playlist h4 a h4{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
+    padding-bottom: 10px;
+    color: #c9b5cf;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: .3s linear;
+}
+.left .playlist h4 a h4:hover{
+    color: #9055A2;
+}
+.left .playlist h4 span{
+    position: relative;
+    margin-right: 35px;
+}
+.left .playlist h4 span::before{
+    color: #c9b5cf;
+    border: 2px solid #c9b5cf;
+    
+}
+.left .playlist h4:hover span::before{
+    color: #9055A2;
+    border: 2px solid #9055A2;
+}
+.playlist h4 a {
+    text-decoration: none;
+}
+.right{
+    height: 320px;
+}
+.right h1{
+    font-size: 30px;
+    margin: 0px 0px 30px 20px;
+    font-family: 'Dosis', sans-serif;
+}
+.right .list li{
+    list-style: none;
+    padding: 0px 0px 0px 20px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.right .list li:hover{
+    background: #da94f0;
+}
+.right .list li span{
+    font-size: 12px;
+    font-weight: 600;
+    color: #c9b5cf;
+}
+.right .list li img{
+    width: 32px;
+    height: 32px;
+    margin-left: 25px;
+}
+.right .list li h5{
+    font-size: 15px;
+    margin-left: 15px;
+}
+.right .list li h5 .artist{
+    font-size: 11px;
+    color: #9055A2;
+}
+.footer .control{
+    display: flex;
+    align-items: center;
+    padding: 0px 20px;
+}
+.footer .wave{
+    width: 30px;
+    height: 30px;
+    padding-bottom: 5px;
+    display: flex;
+    align-items: flex-end;
+    margin-left: 80px;
+}
+.footer .wave .wave1{
+    width: 3px;
+    height: 10px;
+    margin-right: 3px;
+    border-radius: 10px 10px 0px 0px;
+    background: #9055A2;
+    animation: unset;
+}
+.footer .wave .wave1:nth-child(2){
+    height: 13px;
+    /*animation-delay: .4s;*/
+}
+.footer .wave .wave1:nth-child(3){
+    height: 8px;
+    /*animation-delay: .8s;*/
+}
+/*js class wave*/
+.footer .active2 .wave1{
+    animation: wave 1.3s linear infinite;
+}
+.footer .active2 .wave1:nth-child(2){
+    animation-delay: .4s;
+}
+.footer .active2 .wave1:nth-child(3){
+    animation-delay: .8s;
+}
+@keyframes wave{
+    0%{
+        height: 10px;
+    }
+    50%{
+        height: 15px;
+    }
+    100%{
+        height: 10px;
+    }
+}
+
+.footer img{
+    width: 45px;
+    height: 45px;
+}
+.footer h5{
+    width: 130px;
+    font-size: 16px;
+    margin-top: 5px;
+    margin-left: 15px;
+    color: #2E294E;
+    line-height: 15px; 
+}
+.footer h5 .artist{
+    font-size: 13px;
+    color: #9055A2;
+}
+.footer .icon{
+    font-size: 20px; 
+    margin: 0px 20px 0px 40px;
+}
+.footer .icon svg{
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    outline: none;
+}
+.footer span{
+    width: 32px;
+    font-size: 11px;
+    font-weight: 400;
+    margin-top: 5px;
+}
+.footer span #currentStart{
+    margin: 0px 0px 0px 20px;
+}
+.footer .bar{
+    position: relative;
+    width: 30%;
+    height: 2px;
+    background: #2E294E;
+    margin: 10px 15px 0px 10px;
+}
+.footer .bar .bar2{
+    position: absolute;
+    background: #c9b5cf;
+    width: 0%;
+    height: 100%;
+    top: 0;
+}
+.footer .bar .dot{
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: #9055A2;
+    border-radius: 50%;
+    left: 0%;
+    top: -1px;
+    transition: 1s linear;
+} 
+.footer .bar .dot::before{
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border:1px solid #9055A2;
+    border-radius: 50%;
+    left: -6px;
+    top: -6px;
+    box-shadow: inset 0px 0px 3px #9055A2;
+} 
+.footer .bar input{
+    position: absolute;
+    width: 100%;
+    top: -6px;
+    left: 0;
+    cursor: pointer;
+    z-index: 99999999;
+    /* transition: 3s linear; */
+    opacity: 0;
+} 
+.right h1{
+    font-size: 30px;
+    margin: 0px 0px 30px 20px;
+    font-family: 'Dosis', sans-serif;
+}
